@@ -9,15 +9,15 @@ namespace HotelListing.API.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Hotels_Counries_CountryId",
+                name: "FK_Hotels_Countries_CountryId",
                 table: "Hotels");
 
             migrationBuilder.DropPrimaryKey(
-                name: "PK_Counries",
-                table: "Counries");
+                name: "PK_Countries",
+                table: "Countries");
 
             migrationBuilder.RenameTable(
-                name: "Counries",
+                name: "Countries",
                 newName: "Countries");
 
             migrationBuilder.AddPrimaryKey(
@@ -46,18 +46,18 @@ namespace HotelListing.API.Migrations
 
             migrationBuilder.RenameTable(
                 name: "Countries",
-                newName: "Counries");
+                newName: "Countries");
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_Counries",
-                table: "Counries",
+                table: "Countries",
                 column: "Id");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Hotels_Counries_CountryId",
                 table: "Hotels",
                 column: "CountryId",
-                principalTable: "Counries",
+                principalTable: "Countries",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
         }
